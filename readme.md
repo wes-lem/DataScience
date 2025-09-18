@@ -67,4 +67,4 @@ Análise de Sensibilidade: Top 10 Atributos Mais Importantes
 10º: Atributo #27 (Score de Importância: 0.2444)
 ```
 
-
+![Grafico](grafico_2-3.png)
