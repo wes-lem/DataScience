@@ -51,3 +51,20 @@ Total de Acertos: 3125 de 3600 amostras de validação.
 
 Elapsed time is 0.094445 seconds.
 ```
+
+##2.3:
+```bash
+Análise de Sensibilidade: Top 10 Atributos Mais Importantes
+1º: Atributo #30 (Score de Importância: 0.3894)
+2º: Atributo #15 (Score de Importância: 0.3430)
+3º: Atributo #8 (Score de Importância: 0.3104)
+4º: Atributo #5 (Score de Importância: 0.2958)
+5º: Atributo #21 (Score de Importância: 0.2874)
+6º: Atributo #24 (Score de Importância: 0.2694)
+7º: Atributo #12 (Score de Importância: 0.2608)
+8º: Atributo #28 (Score de Importância: 0.2587)
+9º: Atributo #6 (Score de Importância: 0.2546)
+10º: Atributo #27 (Score de Importância: 0.2444)
+```
+
+
