@@ -8,7 +8,10 @@ load derm_target.txt;
 
 % Seleciona todos os atributos
 dados = derm_input;     % vetores com todos atríbutos de entrada da rede
+%dados = [derm_input(1:11, :); derm_input(34, :)];     % vetores com os atríbutos clinicos
+%dados = derm_input(12:33, :);         % vetores com os atríbutos hispatologicos
 alvos = derm_target;    % vetores com as saídas desejadas correspondentes
+
 
 [LinD, ColD] = size(dados);   % Qtd de linhas (atributos) e colunas (instâncias) dos dados de entrada
 
@@ -24,7 +27,7 @@ No = 6;     % No. de neurônios na camada de saída
 n = 50;      % No. de rodadas de teste para medidas estatísticas
 eta = 0.01;  % Taxa de aprendizado
 ptrn = 0.8; % Porcentagem usada para treinamento
-crit_EQ = 0.05; % Critério de parada baseado no erro quadrático
+crit_EQ = 0.3; % Critério de parada baseado no erro quadrático
 CONF_todos = zeros(No,No+1);
 
 tic
@@ -167,3 +170,25 @@ fprintf('Precisão Média: %.2f%%\n', precisao_media_todos * 100);
 fprintf('Total de Acertos: %d de %d amostras de validação.\n\n', acertos_totais, total_amostras);
 
 toc
+
+% QUESTÃO 2.3: ANÁLISE DE SENSIBILIDADE DOS PESOS
+
+W_inputs = W_todos(2:end, :);
+importancia_atributos = sum(abs(W_inputs), 2);
+
+[scores_ordenados, indices_originais] = sort(importancia_atributos, 'descend');
+
+num_top_atributos = 10;
+fprintf('\n--- Análise de Sensibilidade: Top %d Atributos Mais Importantes ---\n', num_top_atributos);
+for i = 1:num_top_atributos
+    fprintf('Posição %d: Atributo #%d (Score de Importância: %.4f)\n', ...
+            i, indices_originais(i), scores_ordenados(i));
+end
+fprintf('------------------------------------------------------------------\n');
+
+figure;
+bar(importancia_atributos);
+title('Importância Relativa de Cada Atributo de Entrada');
+xlabel('Índice do Atributo (1 a 34)');
+ylabel('Score de Importância (Soma |Pesos|)');
+grid on;
