@@ -71,5 +71,7 @@ Análise de Sensibilidade: Top 10 Atributos Mais Importantes
 
 ## 2.4: Conclusão
 O conjunto mais importante: histopatológico.
+
 Porém, **o melhor resultado é obtido com a mistura dos dois tipos**. O fato de a acurácia subir de 86.81% para 92.06% ao adicionarmos os atributos clínicos ao conjunto histopatológico prova que os atributos clínicos, embora fracos sozinhos, adicionam informações valiosas e complementares que ajudam a rede a refinar sua decisão e corrigir erros que ela cometeria usando apenas os dados histopatológicos.
+
 Portanto, a conclusão final é que o conjunto histopatológico é o mais fundamental, mas a combinação de ambos os conjuntos de atributos é a que gera o modelo classificador mais preciso e robusto.
